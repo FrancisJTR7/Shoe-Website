@@ -81,6 +81,127 @@ header .icons a:hover {
   display: none;
 }
 
+section {
+  padding: 2rem 9%;
+}
+.home {
+  padding: 0;
+  position: relative;
+}
+
+.home .slide-container .slide {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 0 9%;
+  padding-top: 9rem;
+}
+
+.home .slide-container .slide .content {
+  flex: 1 1 40rem;
+}
+
+@keyframes slideContent {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+}
+
+.home .slide-container .slide .image {
+  flex: 1 1 50rem;
+  padding-bottom: 15rem;
+  position: relative;
+  z-index: 0;
+}
+
+.home .slide-container .slide .image .shoe {
+  width: 100%;
+  transform: rotate(-10deg);
+  animation: shoe 0.3s linear;
+}
+
+@keyframes shoe {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.5);
+  }
+}
+
+.home .slide-container .slide .content span {
+  font-size: 2rem;
+  color: orangered;
+}
+.home .slide-container .slide .content h3 {
+  font-size: 4rem;
+  color: #000;
+}
+
+.home .slide-container .slide .content p {
+  font-size: 1.7rem;
+  color: #666;
+  padding: 0.5rem 0;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  border: 0.2rem solid #000;
+  font-weight: bolder;
+  font-size: 1.7rem;
+  color: #000;
+  cursor: pointer;
+  background: #fff;
+  padding: 0.8rem 3rem;
+}
+
+.home .slide-container .slide .content {
+  flex: 1 1 40rem;
+  animation: slideContent 0.5s linear 1s backwards;
+}
+
+.home .slide-container {
+  display: none;
+}
+
+.home .slide-container.active {
+  display: block;
+}
+
+.home #prev,
+.home #next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.2rem;
+  font-size: 1.5rem;
+  color: #000;
+  border: 0.2rem solid #000;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.home #prev:hover,
+.home #next:hover {
+  color: #fff;
+  background: orangered;
+}
+
+.home #prev {
+  left: 3rem;
+}
+
+.home #next {
+  right: 3rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   #menu-bar {
@@ -104,5 +225,8 @@ header .icons a:hover {
     margin: 1rem;
     display: block;
     text-aling: center;
+  }
+  header .navbar.active {
+    left: 0;
   }
 }
